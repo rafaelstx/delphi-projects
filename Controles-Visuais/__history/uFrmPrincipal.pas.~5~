@@ -1,0 +1,36 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls;
+
+type
+  TFrmPrincipal = class(TForm)
+    PnlTitulo: TPanel;
+    PgCntrlPrincipal: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmPrincipal.FormShow(Sender: TObject);
+begin
+  PnlTitulo.Caption := 'Caption alterado com onShow';
+  PnlTitulo.Color := $00B9FFFF;
+end;
+
+end.

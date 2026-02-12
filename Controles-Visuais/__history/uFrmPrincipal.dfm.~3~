@@ -1,0 +1,51 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Trabalhando com Eventos e Componentes Visuais'
+  ClientHeight = 475
+  ClientWidth = 783
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnShow = FormShow
+  TextHeight = 15
+  object PnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 783
+    Height = 65
+    Align = alTop
+    Caption = 'Trabalhando com Eventos no Delphi'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 677
+  end
+  object PgCntrlPrincipal: TPageControl
+    Left = 0
+    Top = 65
+    Width = 783
+    Height = 410
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Aba 1'
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Aba 2'
+      ImageIndex = 1
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Aba 3'
+      ImageIndex = 2
+    end
+  end
+end
