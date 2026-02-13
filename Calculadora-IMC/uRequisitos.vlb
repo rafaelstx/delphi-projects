@@ -1,0 +1,10 @@
+﻿[Panel1]
+Coordinates=140,10,55,58
+
+[Label1]
+Coordinates=77,10,53,58
+
+[]
+Coordinates=10,10,57,58
+Visible=True
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/02/12 21:37:03.000.638,=C:\Users\Rafael Teixeira\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 17:47:11.460,=C:\Users\Rafael Teixeira\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 17:47:47.843,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uMain.pas=C:\Users\Rafael Teixeira\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 17:47:47.843,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uMain.dfm=C:\Users\Rafael Teixeira\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2026/02/13 17:48:04.787,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\CalculadoraIMC.dproj=C:\Users\Rafael Teixeira\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2026/02/13 18:04:48.211,=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 18:05:00.297,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uRequisitos.dfm=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.dfm</Transaction>
+    <Transaction>2026/02/13 18:05:00.297,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uRequisitos.pas=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 18:18:51.109,=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 18:19:01.636,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uResultado.dfm=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.dfm</Transaction>
+    <Transaction>2026/02/13 18:19:01.636,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uResultado.pas=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 18:28:06.528,=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.pas</Transaction>
+    <Transaction>2026/02/13 18:28:21.393,C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\uDadosPessoa.pas=C:\Users\Rafael Teixeira\OneDrive\Área de Trabalho\Delphi-Projects\Calculadora-IMC\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
