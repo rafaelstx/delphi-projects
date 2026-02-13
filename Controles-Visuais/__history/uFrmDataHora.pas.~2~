@@ -1,0 +1,32 @@
+unit uFrmDataHora;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage;
+
+type
+  TFrmDataHora = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DataHora: TLabel;
+    LblDataHora: TLabel;
+    Image1: TImage;
+    Timer1: TTimer;
+    procedure Image1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmDataHora: TFrmDataHora;
+
+implementation
+
+{$R *.dfm}
+
+end.

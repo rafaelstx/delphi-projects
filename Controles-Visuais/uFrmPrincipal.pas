@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls,
-  System.ImageList, Vcl.ImgList;
+  System.ImageList, Vcl.ImgList, System.Generics.Collections, uFrmDataHora;
 
 type
   TFrmPrincipal = class(TForm)
@@ -19,11 +19,37 @@ type
     EdtCaracteres: TEdit;
     BtnExibirDataHora: TButton;
     ImageList1: TImageList;
+    Panel1: TPanel;
+    Button1: TButton;
+    Panel2: TPanel;
+    Button2: TButton;
+    Button3: TButton;
+    Panel3: TPanel;
+    Button4: TButton;
+    RGListaOpcoes: TRadioGroup;
+    Button5: TButton;
+    Label2: TLabel;
+    ListBoxItensSelecionados: TListBox;
+    Button6: TButton;
+    MemoObs: TMemo;
+    Label3: TLabel;
+    Button7: TButton;
+    Button8: TButton;
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure EdtCaracteresEnter(Sender: TObject);
     procedure EdtCaracteresExit(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure BtnExibirDataHoraClick(Sender: TObject);
   private
-    { Private declarations }
+    Inside: array of Boolean;
   public
     { Public declarations }
   end;
@@ -34,6 +60,84 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmPrincipal.FormCreate(Sender: TObject);
+begin
+  SetLength(Inside, RGListaOpcoes.Items.Count);
+end;
+
+
+procedure TFrmPrincipal.BtnExibirDataHoraClick(Sender: TObject);
+begin
+  FrmDataHora.ShowModal;
+end;
+
+procedure TFrmPrincipal.Button1Click(Sender: TObject);
+begin
+  PgCntrlPrincipal.ActivePageIndex := 1;
+end;
+
+procedure TFrmPrincipal.Button2Click(Sender: TObject);
+begin
+  PgCntrlPrincipal.ActivePageIndex := 2;
+end;
+
+procedure TFrmPrincipal.Button3Click(Sender: TObject);
+begin
+  PgCntrlPrincipal.ActivePageIndex := 0;
+end;
+
+procedure TFrmPrincipal.Button4Click(Sender: TObject);
+begin
+  PgCntrlPrincipal.ActivePageIndex := 1;
+end;
+
+
+procedure TFrmPrincipal.Button5Click(Sender: TObject);
+var
+  i: integer;
+begin
+
+  SetLength(Inside, RGListaOpcoes.Items.Count);
+
+  if ((RGListaOpcoes.ItemIndex >= 0) and (Inside[RGListaOpcoes.ItemIndex] <> True)) then
+    begin
+      ListBoxItensSelecionados.Items.Add(RGListaOpcoes.Items[RGListaOpcoes.ItemIndex]);
+      Inside[RGListaOpcoes.ItemIndex] := True;
+      RGListaOpcoes.ItemIndex := -1;
+    end
+  else
+    begin
+      if (RGListaOpcoes.ItemIndex = -1) then
+        MessageDlg('Selecione algum campo', TMsgDlgType.mtError, [mbOk], 0)
+      else
+        MessageDlg('Campo já foi selecionado', TMsgDlgType.mtError, [mbOk], 0) ;
+    end;
+end;
+
+procedure TFrmPrincipal.Button6Click(Sender: TObject);
+var
+  i: integer;
+begin
+  ListBoxItensSelecionados.Items.Clear;
+
+  for i := 0 to RGListaOpcoes.Items.Count -1 do
+  begin
+    Inside[i] := False;
+  end;
+
+end;
+
+procedure TFrmPrincipal.Button7Click(Sender: TObject);
+begin
+  MemoObs.SetFocus;
+  MemoObs.SelectAll;
+end;
+
+procedure TFrmPrincipal.Button8Click(Sender: TObject);
+begin
+  MemoObs.Lines.Clear;
+end;
 
 procedure TFrmPrincipal.EdtCaracteresEnter(Sender: TObject);
 begin

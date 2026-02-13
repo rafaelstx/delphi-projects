@@ -2,8 +2,8 @@ object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Trabalhando com Eventos e Componentes Visuais'
-  ClientHeight = 392
-  ClientWidth = 671
+  ClientHeight = 463
+  ClientWidth = 747
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object FrmPrincipal: TFrmPrincipal
   object PnlTitulo: TPanel
     Left = 0
     Top = 0
-    Width = 671
+    Width = 747
     Height = 65
     Align = alTop
     Caption = 'Trabalhando com Eventos no Delphi'
@@ -27,18 +27,15 @@ object FrmPrincipal: TFrmPrincipal
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 783
   end
   object PgCntrlPrincipal: TPageControl
     Left = 0
     Top = 65
-    Width = 671
-    Height = 327
+    Width = 747
+    Height = 398
     ActivePage = TabSheet1
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 783
-    ExplicitHeight = 410
     object TabSheet1: TTabSheet
       Caption = 'Aba 1'
       object GroupBox1: TGroupBox
@@ -76,15 +73,170 @@ object FrmPrincipal: TFrmPrincipal
         ImageMargins.Left = 4
         Images = ImageList1
         TabOrder = 1
+        OnClick = BtnExibirDataHoraClick
+      end
+      object Panel1: TPanel
+        Left = 0
+        Top = 327
+        Width = 739
+        Height = 41
+        Align = alBottom
+        TabOrder = 2
+        object Button1: TButton
+          Left = 699
+          Top = 1
+          Width = 39
+          Height = 39
+          Align = alRight
+          ImageIndex = 0
+          ImageMargins.Left = 9
+          Images = ImageList1
+          TabOrder = 0
+          OnClick = Button1Click
+        end
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Aba 2'
       ImageIndex = 1
+      object Label2: TLabel
+        Left = 456
+        Top = 112
+        Width = 96
+        Height = 15
+        Caption = 'Itens selecionados'
+      end
+      object Panel2: TPanel
+        Left = 0
+        Top = 327
+        Width = 739
+        Height = 41
+        Align = alBottom
+        TabOrder = 0
+        object Button2: TButton
+          Left = 699
+          Top = 1
+          Width = 39
+          Height = 39
+          Align = alRight
+          ImageIndex = 0
+          ImageMargins.Left = 9
+          Images = ImageList1
+          TabOrder = 0
+          OnClick = Button2Click
+        end
+        object Button3: TButton
+          Left = 1
+          Top = 1
+          Width = 39
+          Height = 39
+          Align = alLeft
+          ImageIndex = 1
+          ImageMargins.Left = 9
+          Images = ImageList1
+          TabOrder = 1
+          OnClick = Button3Click
+        end
+      end
+      object RGListaOpcoes: TRadioGroup
+        Left = 32
+        Top = 112
+        Width = 233
+        Height = 153
+        Caption = 'Selecione uma das op'#231#245'es'
+        Columns = 2
+        ItemIndex = 4
+        Items.Strings = (
+          'Delphi'
+          'Python'
+          'PHP'
+          'Java'
+          '.NET')
+        TabOrder = 1
+      end
+      object Button5: TButton
+        Left = 312
+        Top = 176
+        Width = 75
+        Height = 25
+        Caption = '>>>'
+        TabOrder = 2
+        OnClick = Button5Click
+      end
+      object ListBoxItensSelecionados: TListBox
+        Left = 456
+        Top = 128
+        Width = 217
+        Height = 137
+        ItemHeight = 15
+        TabOrder = 3
+      end
+      object Button6: TButton
+        Left = 528
+        Top = 271
+        Width = 75
+        Height = 25
+        Caption = 'Limpar'
+        TabOrder = 4
+        OnClick = Button6Click
+      end
     end
     object TabSheet3: TTabSheet
       Caption = 'Aba 3'
       ImageIndex = 2
+      object Label3: TLabel
+        Left = 24
+        Top = 25
+        Width = 67
+        Height = 15
+        Caption = 'Observa'#231#245'es'
+      end
+      object Panel3: TPanel
+        Left = 0
+        Top = 327
+        Width = 739
+        Height = 41
+        Align = alBottom
+        TabOrder = 0
+        object Button4: TButton
+          Left = 1
+          Top = 1
+          Width = 39
+          Height = 39
+          Align = alLeft
+          ImageIndex = 1
+          ImageMargins.Left = 9
+          Images = ImageList1
+          TabOrder = 0
+          OnClick = Button4Click
+        end
+      end
+      object MemoObs: TMemo
+        Left = 24
+        Top = 46
+        Width = 441
+        Height = 161
+        ScrollBars = ssVertical
+        TabOrder = 1
+      end
+      object Button7: TButton
+        Left = 272
+        Top = 221
+        Width = 91
+        Height = 25
+        Caption = 'Selecionar tudo'
+        TabOrder = 2
+        OnClick = Button7Click
+      end
+      object Button8: TButton
+        Left = 390
+        Top = 221
+        Width = 75
+        Height = 25
+        Caption = 'Limpar'
+        TabOrder = 3
+        OnClick = Button8Click
+      end
     end
   end
   object ImageList1: TImageList
