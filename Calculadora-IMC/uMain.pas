@@ -44,7 +44,7 @@ begin
     Pessoa.Altura := StrToFloat(EditAltura.Text);
     Pessoa.Peso := StrToFloat(EditPeso.Text);
     Pessoa.Sexo := CampoSexo.Text;
-    Pessoa.IMC := CalcularIMC(Pessoa.Altura, Pessoa.Peso, Pessoa.Sexo);
+    Pessoa.IMC := CalcularIMC(Pessoa.Peso, Pessoa.Altura, Pessoa.Sexo);
     Resultado.ShowModal;
   except
 

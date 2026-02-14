@@ -25,7 +25,7 @@ object Main: TMain
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 624
+    ExplicitWidth = 658
   end
   object Body: TPanel
     Left = 0
@@ -34,9 +34,8 @@ object Main: TMain
     Height = 273
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 119
-    ExplicitWidth = 631
-    ExplicitHeight = 308
+    ExplicitWidth = 658
+    ExplicitHeight = 265
     object Label1: TLabel
       Left = 112
       Top = 102
