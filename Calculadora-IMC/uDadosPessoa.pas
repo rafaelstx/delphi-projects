@@ -34,60 +34,31 @@ begin
     numIMC := PessoaPeso / (PessoaAltura * PessoaAltura);
 
     if PessoaSexo = 'Feminino' then
-    begin
-      if numIMC < 19 then
-      begin
-        strIMC := 'Abaixo do normal';
-      end;
+begin
+  if numIMC < 19 then
+    strIMC := 'Abaixo do normal'
+  else if numIMC < 23.9 then
+    strIMC := 'Normal'
+  else if numIMC < 28.9 then
+    strIMC := 'Obesidade leve'
+  else if numIMC < 38.9 then
+    strIMC := 'Obesidade moderada'
+  else
+    strIMC := 'Obesidade mórbida';
+end
+else if PessoaSexo = 'Masculino' then
+begin
+  if numIMC < 20 then
+    strIMC := 'Abaixo do normal'
+  else if numIMC < 24.9 then
+    strIMC := 'Normal'
+  else if numIMC < 29.9 then
+    strIMC := 'Obesidade leve'
+  else if numIMC < 39.9 then
+    strIMC := 'Obesidade moderada'
+  else
+    strIMC := 'Obesidade mórbida';
 
-      if (numIMC >= 19) and (numIMC < 23.9) then
-      begin
-        strIMC := 'Normal';
-      end;
-
-      if (numIMC >= 23.9) and (numIMC < 28.9) then
-      begin
-        strIMC := 'Obesidade leve';
-      end;
-
-      if (numIMC >= 28.9) and (numIMC < 38.9) then
-      begin
-        strIMC := 'Obesidade moderada';
-      end;
-
-      if (numIMC >= 38.9) then
-      begin
-        strIMC := 'Obesidade mórbida';
-      end;
-
-    end;
-
-     if PessoaSexo = 'Masculino' then
-    begin
-      if numIMC < 20 then
-      begin
-        strIMC := 'Abaixo do normal';
-      end;
-
-      if (numIMC >= 20) and (numIMC < 24.9) then
-      begin
-        strIMC := 'Normal';
-      end;
-
-      if (numIMC >= 24.9) and (numIMC < 29.9) then
-      begin
-        strIMC := 'Obesidade leve';
-      end;
-
-      if (numIMC >= 29.9) and (numIMC < 39.9) then
-      begin
-        strIMC := 'Obesidade moderada';
-      end;
-
-      if (numIMC >= 39.9) then
-      begin
-        strIMC := 'Obesidade mórbida';
-      end;
 
     end;
     Result :=  strIMC;
