@@ -14,7 +14,6 @@ uses
     end;
 
     function CalcularIMC(PessoaPeso, PessoaAltura: Double; PessoaSexo: String): String;
-    function StrToFloatConversao(const Valor: String): Double;
 
     var
       Pessoa : TipoDadosPessoa;
@@ -69,19 +68,6 @@ begin
   end;
 
 
-end;
-
-function StrToFloatConversao(const Valor: String): Double;
-var
-  S: String;
-
-begin
-  S:= Trim(Valor);
-
-  S:= StringReplace(S, '.', FormatSettings.DecimalSeparator, [rfReplaceAll]);
-  S:= StringReplace(S, ',', FormatSettings.DecimalSeparator, [rfReplaceAll]);
-
-  Result := StrToFloat(S);
 end;
 
 
