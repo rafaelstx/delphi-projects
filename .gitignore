@@ -1,0 +1,27 @@
+# Delphi / RAD Studio
+*.dproj.local
+*.identcache
+*.local
+*.stat
+*.deployproj.local
+
+# Compilação
+Win32/
+Win64/
+Android/
+iOS/
+Linux64/
+OSX64/
+
+# Arquivos temporários
+*.exe
+*.dll
+*.bpl
+*.dcu
+*.map
+*.rsm
+*.tds
+*.log
+
+# Backup / autosave
+*.~*
