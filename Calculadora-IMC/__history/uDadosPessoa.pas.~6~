@@ -14,14 +14,14 @@ uses
     end;
 
     function CalcularIMC(PessoaPeso, PessoaAltura: Double; PessoaSexo: String): String;
-    function StrToFloatConversao(const Valor: String): Double;
+    function StrToFloatAltura(const Valor: String): String;
 
     var
       Pessoa : TipoDadosPessoa;
 
 implementation
 
-function CalcularIMC(PessoaPeso, PessoaAltura: Double; PessoaSexo: String): String;
+function CalcularIMC(PessoaPeso, PessoaAltura: Double; PessoaSexo: String): Double;
 var
   numIMC: Double;
   strIMC: String;
@@ -71,7 +71,7 @@ begin
 
 end;
 
-function StrToFloatConversao(const Valor: String): Double;
+function StrToFloatAltura(const Valor: String): String;
 var
   S: String;
 
@@ -80,6 +80,7 @@ begin
 
   S:= StringReplace(S, '.', FormatSettings.DecimalSeparator, [rfReplaceAll]);
   S:= StringReplace(S, ',', FormatSettings.DecimalSeparator, [rfReplaceAll]);
+
 
   Result := StrToFloat(S);
 end;

@@ -1,6 +1,6 @@
 object Main: TMain
-  Left = 662
-  Top = 262
+  Left = 0
+  Top = 0
   Caption = 'Calculadora de IMC'
   ClientHeight = 386
   ClientWidth = 660
@@ -10,7 +10,6 @@ object Main: TMain
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesigned
   TextHeight = 15
   object Header: TPanel
     Left = 0

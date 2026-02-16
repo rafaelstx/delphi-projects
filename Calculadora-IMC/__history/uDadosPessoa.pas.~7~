@@ -14,7 +14,7 @@ uses
     end;
 
     function CalcularIMC(PessoaPeso, PessoaAltura: Double; PessoaSexo: String): String;
-    function StrToFloatConversao(const Valor: String): Double;
+    function StrToFloatAltura(const Valor: String): Double;
 
     var
       Pessoa : TipoDadosPessoa;
@@ -71,7 +71,7 @@ begin
 
 end;
 
-function StrToFloatConversao(const Valor: String): Double;
+function StrToFloatAltura(const Valor: String): Double;
 var
   S: String;
 
