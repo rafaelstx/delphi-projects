@@ -20,6 +20,7 @@ type
     BtnRequisitos: TButton;
     procedure BtnRequisitosClick(Sender: TObject);
     procedure BtnResultadoClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,15 +44,27 @@ begin
   try
     Pessoa.Altura := uDadosPessoa.StrToFloatConversao(EditAltura.Text);
     Pessoa.Peso := uDadosPessoa.StrToFloatConversao(EditPeso.Text);
-    Pessoa.Sexo := CampoSexo.Text;
-    Pessoa.IMC := CalcularIMC(Pessoa.Peso, Pessoa.Altura, Pessoa.Sexo);
-    Resultado.ShowModal;
+    if not ValidaComboBox(CampoSexo.Text) then
+      begin
+        MessageDlg('Selecione um sexo', mtError, [mbOk], 0);
+      end
+      else
+        begin
+          Pessoa.Sexo := CampoSexo.Text;
+          Pessoa.IMC := CalcularIMC(Pessoa.Peso, Pessoa.Altura, Pessoa.Sexo);
+          Resultado.ShowModal;
+        end;
 
   except
     on E: Exception do
     ShowMessage('Dados inválidos, verifique Altura e Peso');
   end;
 
+end;
+
+procedure TMain.FormCreate(Sender: TObject);
+begin
+  Application.Title := 'Calculadora IMC';
 end;
 
 end.

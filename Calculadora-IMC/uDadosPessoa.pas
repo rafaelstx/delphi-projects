@@ -15,6 +15,7 @@ uses
 
     function CalcularIMC(PessoaPeso, PessoaAltura: Double; PessoaSexo: String): String;
     function StrToFloatConversao(const Valor: String): Double;
+    function ValidaComboBox(const ComboText: String): Boolean;
 
     var
       Pessoa : TipoDadosPessoa;
@@ -82,6 +83,15 @@ begin
   S:= StringReplace(S, ',', FormatSettings.DecimalSeparator, [rfReplaceAll]);
 
   Result := StrToFloat(S);
+end;
+
+function ValidaComboBox(const ComboText: String): Boolean;
+begin
+
+  if ComboText = '' then
+    Result := False
+  else
+    Result := True;
 end;
 
 

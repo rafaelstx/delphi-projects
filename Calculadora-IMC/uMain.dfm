@@ -11,6 +11,7 @@ object Main: TMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnCreate = FormCreate
   TextHeight = 15
   object Header: TPanel
     Left = 0
@@ -26,7 +27,6 @@ object Main: TMain
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 658
   end
   object Body: TPanel
     Left = 0
@@ -35,8 +35,6 @@ object Main: TMain
     Height = 273
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 658
-    ExplicitHeight = 265
     object Label1: TLabel
       Left = 112
       Top = 102
