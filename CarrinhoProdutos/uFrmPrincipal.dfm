@@ -185,5 +185,13 @@ object TFrmPrincipal: TTFrmPrincipal
       TabOrder = 2
       TextHint = 'Digite o Id'
     end
+    object EditQuantidadeCarrinho: TEdit
+      Left = 32
+      Top = 298
+      Width = 121
+      Height = 23
+      TabOrder = 3
+      TextHint = 'Digite a quantidade'
+    end
   end
 end

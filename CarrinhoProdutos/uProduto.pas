@@ -3,7 +3,7 @@ unit uProduto;
 interface
 
 uses
-  System.SysUtils, System.Generics.Collections;
+  System.SysUtils, System.Generics.Collections, Vcl.Dialogs;
 
 type
   TProduto = record
@@ -13,14 +13,17 @@ type
     Preco: Double;
   end;
 
-function ProcuraProduto(Id: Integer; ListProduto: TList<TProduto>): TProduto;
+function ProcuraProduto(Id, Quantidade: Integer; ListProduto: TList<TProduto>)
+  : TProduto;
+function ControleEstoque(ProdCarrinho: TProduto; Quantidade: Integer): Boolean;
 
 var
   Produto: TProduto;
 
 implementation
 
-function ProcuraProduto(Id: Integer; ListProduto: TList<TProduto>): TProduto;
+function ProcuraProduto(Id, Quantidade: Integer; ListProduto: TList<TProduto>)
+  : TProduto;
 
 begin
 
@@ -30,14 +33,36 @@ begin
     if Produto.Id = Id then
     begin
 
-      Result := Produto;
-      Exit;
-
+      if ControleEstoque(Produto, Quantidade) = True then
+      begin
+        Result := Produto;
+        Exit;
+      end;
     end
 
   end;
 
-  raise Exception.CreateFmt('Produto com ID %d não foi encontrado.', [Id]);
+  raise Exception.CreateFmt('Erro ao inserir produto no carrinho', [Id]);
+
+end;
+
+function ControleEstoque(ProdCarrinho: TProduto; Quantidade: Integer): Boolean;
+
+begin
+
+  if Produto.Quantidade < Quantidade then
+  begin
+    MessageDlg('Quantidade solicitada maior que o disponível no estoque!' +
+      sLineBreak + 'Estoque atual: ' + Produto.Quantidade.ToString, mtError,
+      [mbOK], 0);
+
+    Result := False;
+  end
+  else
+  begin
+    Produto.Quantidade := Produto.Quantidade - Quantidade;
+    Result := True;
+  end;
 
 end;
 
