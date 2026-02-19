@@ -3,7 +3,8 @@ unit uFrmPrincipal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uProduto, System.Generics.Collections,
   Vcl.StdCtrls, Vcl.ExtCtrls;
 
@@ -32,8 +33,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure BtnAddCarrinhoClick(Sender: TObject);
   private
-    FProdutos: TList<TProduto>;
-    procedure FormataLinha;
+    ListProdutos: TList<TProduto>;
+    procedure FormataLinha(Id, Quantidade: Integer;  Nome: String; Preco: Double);
     procedure InsereValoresProduto;
   public
   end;
@@ -43,6 +44,7 @@ var
   LinhaFormatada: String;
   CountId: Integer = 0;
   RecebeId: Integer;
+  ProdCarrinho: TProduto;
 
 implementation
 
@@ -50,15 +52,15 @@ implementation
 
 procedure TTFrmPrincipal.FormCreate(Sender: TObject);
 begin
-  FProdutos := TList<TProduto>.Create;
+  ListProdutos := TList<TProduto>.Create;
   Inc(CountId);
 end;
 
 procedure TTFrmPrincipal.BtnCriarProdutoClick(Sender: TObject);
 begin
   InsereValoresProduto;
-  FormataLinha;
-  FProdutos.Add(Produto);
+  FormataLinha(Produto.Id, Produto.Quantidade, Produto.Name, Produto.Preco);
+  ListProdutos.Add(Produto);
   ListBoxProdutos.Items.Add(LinhaFormatada);
 end;
 
@@ -66,20 +68,23 @@ procedure TTFrmPrincipal.InsereValoresProduto;
 begin
   Produto.Id := CountId;
   Produto.Name := EditNome.Text;
-  Produto.Quantidade := StrToInt(EditQuantidade.text);
-  Produto.Preco := StrToFloat(EditPreco.text);
+  Produto.Quantidade := StrToInt(EditQuantidade.Text);
+  Produto.Preco := StrToFloat(EditPreco.Text);
 end;
 
-
-procedure TTFrmPrincipal.FormataLinha;
+procedure TTFrmPrincipal.FormataLinha(Id, Quantidade: Integer;  Nome: String; Preco: Double);
 begin
-  LinhaFormatada := Format('Código: %d | %s | Qtd: %d | Preço: %s', [Produto.Id, Produto.Name, Produto.Quantidade, FormatCurr('R$ #,##0.00', Produto.Preco)]);
+  LinhaFormatada := Format('Código: %d | %s | Qtd: %d | Preço: %s',
+    [Produto.Id, Produto.Name, Produto.Quantidade, FormatCurr('R$ #,##0.00',
+    Produto.Preco)]);
 end;
 
 procedure TTFrmPrincipal.BtnAddCarrinhoClick(Sender: TObject);
 begin
   RecebeId := StrToInt(EditCarrinho.Text);
-
+  ProdCarrinho := ProcuraProduto(RecebeId, ListProdutos);
+  FormataLinha(ProdCarrinho.Id, ProdCarrinho.Quantidade, ProdCarrinho.Name, ProdCarrinho.Preco);
+  ListCarrinho.Items.Add(LinhaFormatada);
 end;
 
 end.

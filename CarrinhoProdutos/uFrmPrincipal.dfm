@@ -146,9 +146,6 @@ object TFrmPrincipal: TTFrmPrincipal
     Height = 438
     Align = alRight
     TabOrder = 3
-    ExplicitLeft = 336
-    ExplicitTop = 1
-    ExplicitHeight = 436
     object LabelTotalCarrinho: TLabel
       Left = 32
       Top = 384
