@@ -13,11 +13,8 @@ uses
       Preco: Double;
     end;
 
-
     var
       Produto: TProduto;
-
-
 
 implementation
 

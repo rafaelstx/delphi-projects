@@ -11,6 +11,7 @@ object TFrmPrincipal: TTFrmPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnCreate = FormCreate
   TextHeight = 15
   object Header: TPanel
     Left = 0
@@ -19,8 +20,6 @@ object TFrmPrincipal: TTFrmPrincipal
     Height = 73
     Align = alTop
     TabOrder = 0
-    ExplicitTop = -6
-    ExplicitWidth = 884
     object Label5: TLabel
       Left = 232
       Top = 13
@@ -131,5 +130,63 @@ object TFrmPrincipal: TTFrmPrincipal
     Width = 659
     Height = 438
     TabOrder = 2
+    object ListBoxProdutos: TListBox
+      Left = 40
+      Top = 32
+      Width = 241
+      Height = 329
+      ItemHeight = 15
+      TabOrder = 0
+    end
+  end
+  object PnlCarrinho: TPanel
+    Left = 584
+    Top = 73
+    Width = 322
+    Height = 438
+    Align = alRight
+    TabOrder = 3
+    ExplicitLeft = 336
+    ExplicitTop = 1
+    ExplicitHeight = 436
+    object LabelTotalCarrinho: TLabel
+      Left = 32
+      Top = 384
+      Width = 26
+      Height = 15
+      Caption = 'Total'
+    end
+    object LabelQtdItens: TLabel
+      Left = 32
+      Top = 346
+      Width = 62
+      Height = 15
+      Caption = 'Quantidade'
+    end
+    object ListCarrinho: TListBox
+      Left = 32
+      Top = 32
+      Width = 257
+      Height = 199
+      ItemHeight = 15
+      TabOrder = 0
+    end
+    object BtnAddCarrinho: TButton
+      Left = 200
+      Top = 264
+      Width = 89
+      Height = 33
+      Caption = 'Add Carrinho'
+      TabOrder = 1
+      OnClick = BtnAddCarrinhoClick
+    end
+    object EditCarrinho: TEdit
+      Left = 32
+      Top = 269
+      Width = 121
+      Height = 23
+      TabOrder = 2
+      TextHint = 'Digite o Id'
+    end
   end
 end
