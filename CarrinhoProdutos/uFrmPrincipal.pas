@@ -27,7 +27,6 @@ type
     BtnAddCarrinho: TButton;
     ListCarrinho: TListBox;
     LabelTotalCarrinho: TLabel;
-    LabelQtdItens: TLabel;
     EditCarrinho: TEdit;
     EditQuantidadeCarrinho: TEdit;
     procedure BtnCriarProdutoClick(Sender: TObject);
@@ -47,6 +46,7 @@ var
   RecebeId: Integer;
   RecebeQuantidade: Integer;
   ProdCarrinho: TProduto;
+  ValorTotal: Double;
 
 implementation
 
@@ -90,6 +90,9 @@ begin
   ListCarrinho.Items.Add(LinhaFormatada);
   FormataLinha(Produto.Id, Produto.Quantidade, Produto.Name, Produto.Preco);
   ListBoxProdutos.Items.Add(LinhaFormatada);
+  ValorTotal := ValorTotal + (ProdCarrinho.Preco * RecebeQuantidade);
+  LabelTotalCarrinho.Caption := FloatToStr(ValorTotal);
+
 end;
 
 end.

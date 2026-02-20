@@ -148,17 +148,15 @@ object TFrmPrincipal: TTFrmPrincipal
     TabOrder = 3
     object LabelTotalCarrinho: TLabel
       Left = 32
-      Top = 384
-      Width = 26
-      Height = 15
-      Caption = 'Total'
-    end
-    object LabelQtdItens: TLabel
-      Left = 32
-      Top = 346
-      Width = 62
-      Height = 15
-      Caption = 'Quantidade'
+      Top = 360
+      Width = 12
+      Height = 45
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -37
+      Font.Name = 'Swis721 Blk BT'
+      Font.Style = []
+      ParentFont = False
     end
     object ListCarrinho: TListBox
       Left = 32
