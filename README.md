@@ -21,6 +21,10 @@ Aqui registro exercícios, testes, pequenos sistemas e estudos, acompanhando min
 - **RAD Studio**
 - Git & GitHub para controle de versão
 
+---
+
+# Principais assuntos estudados até o momento:
+
 ## 🧠 Fundamentos da Linguagem
 * **Estrutura de Units:** Divisão clara entre `interface` (declarações) e `implementation` (lógica).
 * **Tipagem Forte:** Entendimento de como o Delphi protege a integridade dos dados, exigindo conversões explícitas.
