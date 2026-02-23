@@ -14,55 +14,28 @@ type
   end;
 
 function ProcuraProduto(Id, Quantidade: Integer; ListProduto: TList<TProduto>)
-  : TProduto;
-function ControleEstoque(ProdCarrinho: TProduto; Quantidade: Integer): Boolean;
-
+  : Integer;
 var
   Produto: TProduto;
 
 implementation
 
 function ProcuraProduto(Id, Quantidade: Integer; ListProduto: TList<TProduto>)
-  : TProduto;
+  : Integer;
+var
+  I: Integer;
 
 begin
+  Result := -1;
 
-  for Produto in ListProduto do
+  for I := 0 to ListProduto.Count -1 do
   begin
-
-    if Produto.Id = Id then
+    if ListProduto[I].Id = Id then
     begin
-
-      if ControleEstoque(Produto, Quantidade) = True then
-      begin
-        Result := Produto;
-        Exit;
-      end;
-    end
-
+      Exit(I);
+    end;
   end;
 
-  raise Exception.CreateFmt('Erro ao inserir produto no carrinho', [Id]);
-
-end;
-
-function ControleEstoque(ProdCarrinho: TProduto; Quantidade: Integer): Boolean;
-
-begin
-
-  if Produto.Quantidade < Quantidade then
-  begin
-    MessageDlg('Quantidade solicitada maior que o disponível no estoque!' +
-      sLineBreak + 'Estoque atual: ' + Produto.Quantidade.ToString, mtError,
-      [mbOK], 0);
-
-    Result := False;
-  end
-  else
-  begin
-    Produto.Quantidade := Produto.Quantidade - Quantidade;
-    Result := True;
-  end;
 
 end;
 

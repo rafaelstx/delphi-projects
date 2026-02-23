@@ -34,7 +34,8 @@ type
     procedure BtnAddCarrinhoClick(Sender: TObject);
   private
     ListProdutos: TList<TProduto>;
-    procedure FormataLinha(Id, Quantidade: Integer;  Nome: String; Preco: Double);
+    procedure FormataLinha(Id, Quantidade: Integer; Nome: String;
+      Preco: Double);
     procedure InsereValoresProduto;
   public
   end;
@@ -42,10 +43,10 @@ type
 var
   TFrmPrincipal: TTFrmPrincipal;
   LinhaFormatada: String;
-  CountId: Integer = 0;
+  CountId: Integer = 1;
   RecebeId: Integer;
   RecebeQuantidade: Integer;
-  ProdCarrinho: TProduto;
+  IdCarrinho: Integer;
   ValorTotal: Double;
 
 implementation
@@ -55,7 +56,6 @@ implementation
 procedure TTFrmPrincipal.FormCreate(Sender: TObject);
 begin
   ListProdutos := TList<TProduto>.Create;
-  Inc(CountId);
 end;
 
 procedure TTFrmPrincipal.BtnCriarProdutoClick(Sender: TObject);
@@ -64,6 +64,7 @@ begin
   FormataLinha(Produto.Id, Produto.Quantidade, Produto.Name, Produto.Preco);
   ListProdutos.Add(Produto);
   ListBoxProdutos.Items.Add(LinhaFormatada);
+  Inc(CountId);
 end;
 
 procedure TTFrmPrincipal.InsereValoresProduto;
@@ -74,25 +75,53 @@ begin
   Produto.Preco := StrToFloat(EditPreco.Text);
 end;
 
-procedure TTFrmPrincipal.FormataLinha(Id, Quantidade: Integer;  Nome: String; Preco: Double);
+procedure TTFrmPrincipal.FormataLinha(Id, Quantidade: Integer; Nome: String;
+  Preco: Double);
 begin
   LinhaFormatada := Format('Código: %d | %s | Qtd: %d | Preço: %s',
-    [Id, Nome, Quantidade, FormatCurr('R$ #,##0.00',
-    Preco)]);
+    [Id, Nome, Quantidade, FormatCurr('R$ #,##0.00', Preco)]);
 end;
 
 procedure TTFrmPrincipal.BtnAddCarrinhoClick(Sender: TObject);
+var
+  TempProd : TProduto;
 begin
   RecebeId := StrToInt(EditCarrinho.Text);
+
   RecebeQuantidade := StrToInt(EditQuantidadeCarrinho.Text);
-  ProdCarrinho := ProcuraProduto(RecebeId, RecebeQuantidade, ListProdutos);
-  FormataLinha(ProdCarrinho.Id, RecebeQuantidade, ProdCarrinho.Name, ProdCarrinho.Preco);
-  ListCarrinho.Items.Add(LinhaFormatada);
-  FormataLinha(Produto.Id, Produto.Quantidade, Produto.Name, Produto.Preco);
-  ListBoxProdutos.Items.Add(LinhaFormatada);
-  ValorTotal := ValorTotal + (ProdCarrinho.Preco * RecebeQuantidade);
-  LabelTotalCarrinho.Caption := FloatToStr(ValorTotal);
+
+  IdCarrinho := ProcuraProduto(RecebeId, RecebeQuantidade, ListProdutos);
+
+  if IdCarrinho <> -1 then
+  begin
+    if RecebeQuantidade <= ListProdutos[IdCarrinho].Quantidade then
+    begin
+      FormataLinha(ListProdutos[IdCarrinho].Id, RecebeQuantidade, ListProdutos[IdCarrinho].Name, ListProdutos[IdCarrinho].Preco);
+      ListCarrinho.Items.Add(LinhaFormatada);
+      TempProd := ListProdutos[IdCarrinho];
+      TempProd.Quantidade := TempProd.Quantidade - RecebeQuantidade;
+      ListProdutos[IdCarrinho] := TempProd;
+    end
+    else
+    begin
+      ShowMessage('Quantidade maior que a disponível em estoque!');
+      Exit;
+    end;
+
+    FormataLinha(ListProdutos[IdCarrinho].Id, ListProdutos[IdCarrinho].Quantidade, ListProdutos[IdCarrinho].Name, ListProdutos[IdCarrinho].Preco);
+
+    ListBoxProdutos.Items[IdCarrinho] := LinhaFormatada;
+
+    ValorTotal := ValorTotal + (ListProdutos[IdCarrinho].Preco * RecebeQuantidade);
+
+    LabelTotalCarrinho.Caption := FloatToStr(ValorTotal);LabelTotalCarrinho.Caption := FormatCurr('R$ #,##0.00', ValorTotal);
+  end
+  else
+  begin
+    ShowMessage('Produto não encontrado!');
+  end;
 
 end;
+
 
 end.
