@@ -52,8 +52,8 @@ Aqui registro exercícios, testes, pequenos sistemas e estudos, acompanhando min
 
 ## 🖼 Desenvolvimento de Interface (VCL)
 * **Hierarquia da VCL:** Entendimento da árvore desde `TObject` até `TWinControl`.
-* **Componentes Standard:** Domínio de Labels, Edits, CheckBox e RadioButtons.
+* **Componentes Standard:** Domínio de Labels, Edits, CheckBox e RadioButtons, entre outros.
 * **Gerenciamento de Ações:** Uso de `TActionList` para separar a lógica da interface, centralizando o comportamento de menus e botões.
-* **Feedback ao Usuário:** Implementação de caixas de diálogo profissionais com `MessageDlg`.
+* **Feedback ao Usuário:** Implementação de diversos componentes visuais (presentes nos projetos do repositório).
 
 
