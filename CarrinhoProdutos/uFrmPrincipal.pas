@@ -69,10 +69,13 @@ end;
 
 procedure TTFrmPrincipal.InsereValoresProduto;
 begin
-  Produto.Id := CountId;
-  Produto.Name := EditNome.Text;
-  Produto.Quantidade := StrToInt(EditQuantidade.Text);
-  Produto.Preco := StrToFloat(EditPreco.Text);
+  with Produto do
+  begin
+      Id := CountId;
+      Name := EditNome.Text;
+      Quantidade := StrToInt(EditQuantidade.Text);
+      Produto.Preco := StrToFloat(EditPreco.Text);
+  end;
 end;
 
 procedure TTFrmPrincipal.FormataLinha(Id, Quantidade: Integer; Nome: String;

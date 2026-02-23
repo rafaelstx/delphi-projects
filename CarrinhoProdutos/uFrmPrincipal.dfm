@@ -125,7 +125,7 @@ object TFrmPrincipal: TTFrmPrincipal
     end
   end
   object PnlListarProduto: TPanel
-    Left = 248
+    Left = 255
     Top = 73
     Width = 659
     Height = 438
