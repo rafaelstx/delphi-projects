@@ -13,14 +13,14 @@ type
     Preco: Double;
   end;
 
-function ProcuraProduto(Id, Quantidade: Integer; ListProduto: TList<TProduto>)
+function ProcuraProduto(Id: Integer; ListProduto: TList<TProduto>)
   : Integer;
 var
   Produto: TProduto;
 
 implementation
 
-function ProcuraProduto(Id, Quantidade: Integer; ListProduto: TList<TProduto>)
+function ProcuraProduto(Id: Integer; ListProduto: TList<TProduto>)
   : Integer;
 var
   I: Integer;

@@ -125,7 +125,7 @@ object TFrmPrincipal: TTFrmPrincipal
     end
   end
   object PnlListarProduto: TPanel
-    Left = 255
+    Left = 247
     Top = 73
     Width = 659
     Height = 438
@@ -146,6 +146,7 @@ object TFrmPrincipal: TTFrmPrincipal
     Height = 438
     Align = alRight
     TabOrder = 3
+    ExplicitTop = 79
     object LabelTotalCarrinho: TLabel
       Left = 32
       Top = 360
