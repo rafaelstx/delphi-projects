@@ -10,10 +10,8 @@ object Form1: TForm1
   Font.Height = -16
   Font.Name = 'Tahoma'
   Font.Style = [fsBold]
-  OldCreateOrder = False
   Position = poDesigned
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 19
   object SpeedButton1: TSpeedButton
     Left = 154
@@ -86,6 +84,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    Text = ''
   end
   object EdtResultado: TLabeledEdit
     Left = 32
@@ -102,6 +101,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    Text = ''
   end
   object EdtValor2: TLabeledEdit
     Left = 32
@@ -118,5 +118,6 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    Text = ''
   end
 end

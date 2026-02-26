@@ -44,16 +44,15 @@ implementation
 
 { TCalculadora }
 
-procedure TCalculadora.Dividir;
-begin
-  try
-    FN1 := StrToFloat(FValor1);
-    FN2 := StrToFloat(FValor2);
-    FResultado := FloatToStr(FN1 / FN2);
-  except
-    raise EDivideError.Create('Ocorreu um erro ao tentar executar uma operação de dividir!');
-  end;
 
+procedure TCalculadora.SetValor1(const Value: string);
+begin
+  FValor1 := Value;
+end;
+
+procedure TCalculadora.SetValor2(const Value: String);
+begin
+  FValor2 := Value;
 end;
 
 procedure TCalculadora.ExecutaOperacao(Op: TOperacao);
@@ -64,6 +63,18 @@ begin
     opMultiplicar: Multiplicar;
     opDividir: Dividir;
   end;
+end;
+
+procedure TCalculadora.Dividir;
+begin
+  try
+    FN1 := StrToFloat(FValor1);
+    FN2 := StrToFloat(FValor2);
+    FResultado := FloatToStr(FN1 / FN2);
+  except
+    raise EDivideError.Create('Ocorreu um erro ao tentar executar uma operação de dividir!');
+  end;
+
 end;
 
 procedure TCalculadora.Multiplicar;
@@ -77,16 +88,6 @@ begin
   end;
 end;
 
-procedure TCalculadora.SetValor1(const Value: string);
-begin
-  FValor1 := Value;
-end;
-
-procedure TCalculadora.SetValor2(const Value: String);
-begin
-  FValor2 := Value;
-end;
-
 procedure TCalculadora.Somar;
 begin
   try
@@ -98,7 +99,8 @@ begin
   end;
 end;
 
-procedure TCalculadora.Subtrair;
+
+  procedure TCalculadora.Subtrair;
 begin
   try
     FN1 := StrToFloat(FValor1);
