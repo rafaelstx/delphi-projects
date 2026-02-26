@@ -49,6 +49,8 @@ Aqui registro exercícios, testes, pequenos sistemas e estudos, acompanhando min
 * **Variants:** Uso de tipos flexíveis e os perigos da perda de tipagem forte.
 * **Anonymous Methods:** Implementação de funções anônimas e *closures* para código mais dinâmico.
 * **Referências Circulares:** Como identificar e resolver o erro `F2047` através da separação de camadas.
+* * **Tratamento de erros:** Tratando erros de forma personalizada ou genérica.
+* * **Arquivos INI:** Criação de arquivos de inicialziação para gravação de parâmetros e dados de configuração.
 
 ## 🖼 Desenvolvimento de Interface (VCL)
 * **Hierarquia da VCL:** Entendimento da árvore desde `TObject` até `TWinControl`.
